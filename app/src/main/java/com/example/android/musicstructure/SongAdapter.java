@@ -44,7 +44,6 @@ public class SongAdapter extends ArrayAdapter<Song> {
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: start new activity with intent and pass getSongName() and getArtistName() in
                 Intent i = new Intent(getContext(), PlaySongActivity.class);
                 i.putExtra("songName", currentSong.getSongName());
                 i.putExtra("artistName", currentSong.getArtistName());

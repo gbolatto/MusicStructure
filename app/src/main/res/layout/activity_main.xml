@@ -7,21 +7,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/header_container"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/header_toolbar"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/header_height"
-        android:background="@color/header_background">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="@dimen/header_text_margin"
-            android:text="@string/song_list"
-            android:textAppearance="@style/header_text"/>
-
-    </RelativeLayout>
+        android:background="@color/header_background"
+        android:elevation="4dp"/>
 
     <ListView
         android:id="@+id/list_view"
