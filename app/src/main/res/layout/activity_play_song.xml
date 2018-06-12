@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PlaySongActivity">
+
+    <RelativeLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/header_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="8dp"
+            android:text="@string/now_playing"
+            android:textAppearance="@style/header_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/play_song_detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/play_song_song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="@style/play_song_name"
+            tools:text="Song Name"/>
+
+        <TextView
+            android:id="@+id/play_song_artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/play_song_song_name"
+            android:layout_centerInParent="true"
+            android:textAppearance="@style/play_artist_name"
+            tools:text="Artist Name"/>
+
+    </RelativeLayout>
+
+    <!-- progress set at static 25 just for testing since we're not actually playing music -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/progress_bar_margins"
+        android:progress="25"
+        android:progressBackgroundTint="@color/progress_background_color"
+        android:progressTint="@color/progress_color"/>
+
+</LinearLayout>

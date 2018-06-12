@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="header_text">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/header_text_color</item>
+    </style>
+
+    <!-- styles for activity_main -->
+    <style name="song_name">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/song_name_color</item>
+    </style>
+
+    <style name="artist_name">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/artist_name_color</item>
+    </style>
+
+    <!-- styles for activity_play_song -->
+    <style name="play_song_name">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">@color/song_name_color</item>
+    </style>
+
+    <style name="play_artist_name">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/artist_name_color</item>
+    </style>
+
+</resources>
