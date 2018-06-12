@@ -22,29 +22,42 @@ public class SongAdapter extends ArrayAdapter<Song> {
         super(context, 0, songs);
     }
 
+
+    static private class ViewHolder {
+        private TextView songNameTextView;
+        private TextView artistNameTextView;
+    }
+
+
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
+    public View getView(int position, @Nullable View listItemView, @NonNull ViewGroup parent) {
+
+        ViewHolder holder;
+
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
+            holder = new ViewHolder();
+            holder.songNameTextView = listItemView.findViewById(R.id.song_name);
+            holder.artistNameTextView = listItemView.findViewById(R.id.artist_name);
+            listItemView.setTag(holder);
+        } else {
+            holder = (ViewHolder) listItemView.getTag();
         }
 
         final Song currentSong = getItem(position);
 
-        TextView songNameTextView = listItemView.findViewById(R.id.song_name);
-        TextView artistNameTextView = listItemView.findViewById(R.id.artist_name);
-
         Button buttonPlay = listItemView.findViewById(R.id.play_button);
 
-        songNameTextView.setText(currentSong.getSongName());
-        artistNameTextView.setText(currentSong.getArtistName());
+        holder.songNameTextView.setText(currentSong.getSongName());
+        holder.artistNameTextView.setText(currentSong.getArtistName());
 
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), PlaySongActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.putExtra("songName", currentSong.getSongName());
                 i.putExtra("artistName", currentSong.getArtistName());
                 getContext().startActivity(i);

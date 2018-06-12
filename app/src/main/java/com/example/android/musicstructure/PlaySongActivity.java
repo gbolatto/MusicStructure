@@ -20,7 +20,6 @@ public class PlaySongActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.now_playing);
 
-
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
